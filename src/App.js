@@ -1,4 +1,5 @@
 import  CounterRedux from "./CounterRedux";
+import CounterNoRedux from "./CounterNoRedux";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 

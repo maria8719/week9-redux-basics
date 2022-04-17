@@ -14,7 +14,7 @@ The Flux architecture came with four essential components:
   
 ![Flux architecture](images/flux.png)
 
-The View is basically the component tree in a modern application. For instance, React is able to implement such a View. A user can interact with the View in order to trigger an Action eventually (e.g. a click on a button). An Action would encapsulate all the necessary information to update the state in the Store. Then, the Dispatcher on the way delegates the Actions to the Store. The new state would be propagated from the Store to the View to update them. The last part closes the loop of the unidirectional data flow.
+The ```View``` is basically the component tree in a modern application. A user can interact with the View in order to trigger an ```Action```(e.g. a click on a button). An Action would encapsulate all the necessary information to update the state in the ```Store```. Then, the ```Dispatcher``` on the way delegates the Actions to the Store. The new state would be propagated from the Store to the View to update them. The last part closes the loop of the unidirectional data flow.
 
 # Redux
 

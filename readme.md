@@ -1,3 +1,22 @@
+# State Management
+
+State management in web applications has become a popular topic. Since single page applications (SPAs) are only delivered once from a web server yet stay interactive on the client they have to establish state management on the client. 
+
+They have to keep the state consistent in the frontend application without making any more requests to the backend application. They have to give the user an effortless and pleasant experience when using the application.
+
+The <a href="https://www.youtube.com/watch?v=nYkdrAPrdcw">Flux architecture</a> is a pattern to deal with state management in scaling applications. The data flows only in one direction. 
+The Flux architecture came with four essential components: 
+  - Action
+  - Dispatcher
+  - Store
+  - View 
+  
+The View is basically the component tree in a modern application. For instance, React is able to implement such a View. A user can interact with the View in order to trigger an Action eventually (e.g. a click on a button). An Action would encapsulate all the necessary information to update the state in the Store. Then, the Dispatcher on the way delegates the Actions to the Store. The new state would be propagated from the Store to the View to update them. The last part closes the loop of the unidirectional data flow.
+
+The data flow goes in one direction. A View can trigger an Action, that goes through the Dispatcher and Store, and would change the View eventually when the state in the Store changed. The unidirectional data flow is enclosed in this loop. Then again, a View can trigger another Action. Since Facebook introduced the Flux architecture, the View was associated with React and its components.
+
+
+
 # Redux
 
 If you have components that are siblings and need to share data, the way to do that in React is to pull that data up into a parent component and pass it down with props.
@@ -34,6 +53,7 @@ Redux setup involves two kinds of files:
   - reducer files (can have multiple)
   - store file (only one)
 
+Reducers are where state
 ## Redux store vs state
 
 Redux gives you a store, and let's you keep state in it, and get state out, and respond when the state changes, and that's all it does. 

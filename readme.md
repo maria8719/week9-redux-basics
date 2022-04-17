@@ -27,6 +27,12 @@ npm install redux react-redux
 
 Then create a redux folder inside your ```src``` folder
 
+![Redux folder](images/folder.png)
+
+
+Redux setup involves two kinds of files:
+  - reducer files (can have multiple)
+  - store file (only one)
 
 ## Redux store vs state
 

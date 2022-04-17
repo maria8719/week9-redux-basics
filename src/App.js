@@ -1,11 +1,15 @@
-import  CounterRedux from "./CounterRedux";
-import CounterNoRedux from "./CounterNoRedux";
+import  CounterRedux from "./Counter";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 
 import reducer from "./reducer";
 import "./App.css";
 
+/**
+ * 
+ *  
+ * 
+ */
 const store = createStore(reducer);
 
 function App() {

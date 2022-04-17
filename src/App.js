@@ -5,11 +5,6 @@ import {Provider} from "react-redux";
 import reducer from "./redux/reducer";
 import "./App.css";
 
-/**
- * 
- *  
- * 
- */
 const store = createStore(reducer);
 
 function App() {

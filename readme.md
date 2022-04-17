@@ -4,6 +4,10 @@ State management in web applications has become a popular topic. Since single pa
 
 They have to keep the state consistent in the frontend application without making any more requests to the backend application. They have to give the user an effortless and pleasant experience when using the application.
 
+In React, data flows unidirectionally. This means that we can only pass data from a parent to a child component. This can become a hassle and pretty complex when we start dealing with very large scaled applications.
+
+![Without Redux](images/without_redux.png)
+
 The <a href="https://www.youtube.com/watch?v=nYkdrAPrdcw">Flux architecture</a> is a pattern to deal with state management in scaling applications. The data flows only in one direction. 
 
 The Flux architecture came with four essential components: 
@@ -16,7 +20,9 @@ The Flux architecture came with four essential components:
 
 The ```view``` is basically the component tree in a modern application. A user can interact with the View in order to trigger an ```action```(e.g. a click on a button). An Action would encapsulate all the necessary information to update the state in the ```store```. Then, the ```dispatcher``` on the way delegates the Actions to the Store. The new state would be propagated from the Store to the View to update them. The last part closes the loop of the unidirectional data flow.
 
-# Redux
+# React and Redux
+
+Redux is a predictable state container for JavaScript apps. You want the ```state``` of your application to be managed by Redux.
 
 So why is it called Redux? Because it combines the two words Reducer and Flux. 
 
@@ -100,7 +106,7 @@ In addition, the createStore takes a second optional argument: the initial state
 onst store = createStore(reducer, []);
 ```
 
-## Dispatching an action
+### Dispatching an action
 
 The store we created has a built-in function called dispatch. Call it with an action, and Redux will call your reducer with that action (and then replace the state with whatever your reducer returned).
 
@@ -113,20 +119,6 @@ store.dispatch({
 ```
 
 Every call to dispatch results in a call to your reducer!
-
-## Setup
-
-To setup Redux/React Redux install the two packages:
-
-```
-npm install redux react-redux
-```
-
-Then create a redux folder inside your ```src``` folder
-
-![Redux folder](images/folder.png)
-
-
 
 
 ### Handle Actions in a Redux Reducer
@@ -159,15 +151,20 @@ function reducer(state = initialState, action) {
 
 Another thing about reducers is that they must be ```pure functions```. This means that they can’t modify their arguments, and they can’t have side effects.
 
-## react-redux
+## React and Redux: Connect State to React Compoments
+
+To setup Redux/React Redux install the two packages:
+
+```
+npm install redux react-redux
+```
 
 It's ```react-redux``` that lets you connect pieces of the state to React components. That's right, ```redux``` knows nothing about React at all.
 
 The redux library can be used outside of a React app too. It’ll work with Vue, Angular, and even
 backend Node/Express apps.
 
-The ```react-redux``` library comes with 2 things: a component called Provider, and a function
-called connect.
+The ```react-redux``` library comes with 2 things: a component called <a href="https://react-redux.js.org/api/provider">Provider</a>, and a function called <a href="https://react-redux.js.org/api/connect">connect</a>.
 
 By wrapping the entire app with the Provider component, every component in the app tree will be
 able to access the Redux store if it wants to.
@@ -177,7 +174,7 @@ import { Provider } from 'react-redux';
 
 const App = () => (
     <Provider store={store}>
-        <Counter/>
+        // ...compoments
     </Prover>
 ```
 
@@ -189,7 +186,7 @@ We’ll need to use the ```connect``` function on our components to access the s
 
 The Provider uses React’s Context feature under the hood.
 
-## Connect the Component to Redux using connect (old way)
+### Connect function
 
 To get the state out of Redux store, we need to import the connect function at the top of the compoment:
 
@@ -244,6 +241,9 @@ console.log(multiply(1)(2));
 const a = multiply(1) // => function(b) return 1 * b
 const product = a(2);
 ```
+
+## Debugging
+
 
 ## Redux Alternatives
 

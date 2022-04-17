@@ -107,7 +107,7 @@ onst store = createStore(reducer, []);
 
 ### Dispatching an action
 
-The store we created has a built-in function called dispatch. Call it with an action, and Redux will call your reducer with that action (and then replace the state with whatever your reducer returned).
+The store we created has a built-in function called <a href="https://redux.js.org/api/store#dispatchaction">dispatch</a>. Call it with an action, and Redux will call your reducer with that action (and then replace the state with whatever your reducer returned).
 
 ```JS
 const store = createStore(reducer);

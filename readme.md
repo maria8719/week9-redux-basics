@@ -119,7 +119,7 @@ store.dispatch({
 
 > Every call to dispatch results in a call to your reducer!
 
-## React and Redux: Connect State to React Compoments
+## React and Redux: Connect State to React
 
 To setup Redux/React Redux install the two packages:
 
@@ -127,10 +127,9 @@ To setup Redux/React Redux install the two packages:
 npm install redux react-redux
 ```
 
-It's ```react-redux``` that lets you connect pieces of the state to React components. That's right, ```redux``` knows nothing about React at all.
+It's ```react-redux``` that lets you connect pieces of the state to React components, because ```redux``` knows nothing about React at all.
 
-The redux library can be used outside of a React app too. It’ll work with Vue, Angular, and even
-backend Node/Express apps.
+The redux library can be used outside of a React app with other front-end libraries like Vue, Angular, and even backend Node/Express apps.
 
 The ```react-redux``` library comes with 2 things: a component called <a href="https://react-redux.js.org/api/provider">Provider</a>, and a function called <a href="https://react-redux.js.org/api/connect">connect</a>.
 

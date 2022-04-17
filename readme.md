@@ -18,11 +18,6 @@ The View is basically the component tree in a modern application. For instance, 
 
 # Redux
 
-If you have components that are siblings and need to share data, the way to do that in React is to pull that data up into a parent component and pass it down with props.
-
-That can be cumbersome though. Redux can help by giving you one global “parent” where you can
-store the data, and then you can connect the sibling components to the data with React-Redux.
-
 So why is it called Redux? Because it combines the two words Reducer and Flux. 
 
 Some general rules of how Redux handles state:

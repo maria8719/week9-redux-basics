@@ -26,7 +26,7 @@ Some general rules of how Redux handles state:
   - Changes happen one way, and one way only: dispatch(action) -> reducer -> new state.
   - The reducer function must be "pure" – it cannot modify its arguments, and it can’t have side effects.
 
-### Action
+## Action
 
 An action in Redux is a JavaScript object. It has a type and an optional payload. The type is often referred to as action type. While the type is a string literal, the payload can be anything from a string to an object.
 
@@ -39,7 +39,7 @@ An action in Redux is a JavaScript object. It has a type and an optional payload
 
 Executing an action is called ```dispatching``` in Redux. You can dispatch an action to alter the state in the Redux store. You only dispatch an action when you want to change the state. The dispatching of an action is triggered in your view. 
 
-### Reducer(s)
+## Reducer(s)
 
 The view dispatches an action, an action object with action type and optional payload, which passes through all reducers. What's a reducer? 
 
@@ -78,7 +78,7 @@ function reducer(state = initialState, action) {
 }
 ```
 
-### Store
+## Store
 
 Redux gives you a store, and let's you keep state in it, and get state out, and respond when the state changes, and that's all it does. 
 
@@ -100,7 +100,7 @@ In addition, the createStore takes a second optional argument: the initial state
 onst store = createStore(reducer, []);
 ```
 
-### Dispatching an action
+## Dispatching an action
 
 The store we created has a built-in function called dispatch. Call it with an action, and Redux will call your reducer with that action (and then replace the state with whatever your reducer returned).
 

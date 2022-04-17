@@ -119,36 +119,6 @@ store.dispatch({
 
 > Every call to dispatch results in a call to your reducer!
 
-### Handle Actions in a Redux Reducer
-
-To make actions actually do something, we need to write some code in the reducer that will inspect
-the type of each action and update the state accordingly.
-
-```JS
-function reducer(state = initialState, action) {
-     console.log('reducer', state, action);
-     
-     switch(action.type) {
-        case 'INCREMENT':
-            return {
-                count: state.count + 1
-            };
-        case 'DECREMENT':
-            return {
-                count: state.count - 1
-            };
-        case 'RESET':
-            return {
-                count: 0
-            };
-        default:
-            return state;
-    }
-}
-```
-
-Another thing about reducers is that they must be ```pure functions```. This means that they can’t modify their arguments, and they can’t have side effects.
-
 ## React and Redux: Connect State to React Compoments
 
 To setup Redux/React Redux install the two packages:

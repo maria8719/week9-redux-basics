@@ -28,7 +28,7 @@ Some general rules of how Redux handles state:
 
 ### Action
 
-An Action in Redux is a JavaScript object. It has a type and an optional payload. The type is often referred to as action type. While the type is a string literal, the payload can be anything from a string to an object.
+An action in Redux is a JavaScript object. It has a type and an optional payload. The type is often referred to as action type. While the type is a string literal, the payload can be anything from a string to an object.
 
 ```JS
 {
@@ -37,7 +37,7 @@ An Action in Redux is a JavaScript object. It has a type and an optional payload
 }
 ```
 
-Executing an action is called ```dispatching``` in Redux. You can dispatch an action to alter the state in the Redux store. You only dispatch an action when you want to change the state. The dispatching of an action can be triggered in your View. It could be as simple as a click on a HTML button. In addition, the payload in a Redux action is not mandatory. You can define actions that have only an action type. 
+Executing an action is called ```dispatching``` in Redux. You can dispatch an action to alter the state in the Redux store. You only dispatch an action when you want to change the state. The dispatching of an action is triggered in your view. 
 
 ### Reducer(s)
 

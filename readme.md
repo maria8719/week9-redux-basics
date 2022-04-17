@@ -28,7 +28,7 @@ Some general rules of how Redux handles state:
 
 ### Action
 
-An action in Redux is a JavaScript object. It has a type and an optional payload. The type is often referred to as action type. While the type is a string literal, the payload can be anything from a string to an object.
+An ```action``` in Redux is a JavaScript object. It has a type and an optional payload. The type is often referred to as action type. While the type is a string literal, the payload can be anything from a string to an object.
 
 ```JS
 {

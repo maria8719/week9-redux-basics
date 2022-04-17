@@ -15,7 +15,7 @@ The View is basically the component tree in a modern application. For instance, 
 
 The data flow goes in one direction. A View can trigger an Action, that goes through the Dispatcher and Store, and would change the View eventually when the state in the Store changed. The unidirectional data flow is enclosed in this loop. Then again, a View can trigger another Action. Since Facebook introduced the Flux architecture, the View was associated with React and its components.
 
-
+![Flux architecture](images/flux.png)
 
 # Redux
 
@@ -24,7 +24,7 @@ If you have components that are siblings and need to share data, the way to do t
 That can be cumbersome though. Redux can help by giving you one global “parent” where you can
 store the data, and then you can connect the sibling components to the data with React-Redux.
 
-![Redux flow](images/redux_flow.png)
+
 
 Redux does some other cool stuff too, like make debugging easier (Redux DevTools let you inspect
 every single state change), time-travel debugging (you can roll back state changes and see how your

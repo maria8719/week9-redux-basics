@@ -19,9 +19,9 @@ The Facebook development created the <a href="https://www.youtube.com/watch?v=pR
 
 The ```view``` is basically the component tree in a modern application. A user can interact with the View in order to trigger an ```action```(e.g. a click on a button). An Action would encapsulate all the necessary information to update the state in the ```store```. Then, the ```dispatcher``` on the way delegates the Actions to the Store. The new state would be propagated from the Store to the View to update them. The last part closes the loop of the unidirectional data flow.
 
-# React and Redux
+# Redux
 
-Redux is a predictable state container for JavaScript apps. You want the ```state``` of your application to be managed by Redux.
+Redux takes most of the architecture patterns from Flux to be a predictable state container for JavaScript apps, so you have the ```state``` of your application managed by Redux.
 
 So why is it called Redux? Because it combines the two words Reducer and Flux. 
 

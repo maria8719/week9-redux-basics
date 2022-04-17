@@ -93,7 +93,7 @@ Be careful in thinking that the ```store``` and ```state``` are the same.  Techn
 import { createStore } from 'redux';
 ```
 
-Now you can use it to create a store singleton instance. The createStore function takes one mandatory argument: a reducer. 
+Now you use it to create a store singleton instance. The createStore function takes one mandatory argument: a reducer. 
 
 ```JS
 const store = createStore(reducer);

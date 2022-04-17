@@ -8,14 +8,13 @@ In React, data flows unidirectionally. This means that we can only pass data fro
 
 ![Without Redux](images/without_redux.png)
 
-The <a href="https://www.youtube.com/watch?v=nYkdrAPrdcw">Flux architecture</a> is a pattern to deal with state management in scaling applications. The data flows only in one direction. 
+The Facebook development created the <a href="https://www.youtube.com/watch?v=pR4A9YONzuo">Flux architecture pattern</a> back in <a href="https://www.youtube.com/watch?v=nYkdrAPrdcw">2014</a> as an alternative to MVC architecture. The Flux architecture is based on the following components:
 
-The Flux architecture came with four essential components: 
-  - Action
-  - Dispatcher
-  - Store
-  - View 
-  
+- Store/ Stores: Serves as a container for the app state & logic
+- Action: Enables data passing to the dispatcher
+- View: Same as the view in MVC architecture, but in the context of React components
+- Dispatcher – Coordinates actions & updates to stores
+
 ![Flux architecture](images/flux.png)
 
 The ```view``` is basically the component tree in a modern application. A user can interact with the View in order to trigger an ```action```(e.g. a click on a button). An Action would encapsulate all the necessary information to update the state in the ```store```. Then, the ```dispatcher``` on the way delegates the Actions to the Store. The new state would be propagated from the Store to the View to update them. The last part closes the loop of the unidirectional data flow.

@@ -17,6 +17,17 @@ Some general rules of how Redux handles state:
   - Changes happen one way, and one way only: dispatch(action) -> reducer -> new state.
   - The reducer function must be "pure" – it cannot modify its arguments, and it can’t have side effects.
 
+## Setup
+
+To setup Redux/React Redux install the two packages:
+
+```
+npm install redux react-redux
+```
+
+Then create a redux folder inside your ```src``` folder
+
+
 ## Redux store vs state
 
 Redux gives you a store, and let's you keep state in it, and get state out, and respond when the state changes, and that's all it does. 

@@ -151,7 +151,7 @@ But, not automatically.
 
 We’ll need to use the ```connect``` function on our components to access the store.
 
-The Provider uses React’s Context feature under the hood.
+> The Provider uses React’s Context feature under the hood.
 
 ### Connect function
 

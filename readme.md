@@ -117,8 +117,7 @@ store.dispatch({
 });
 ```
 
-Every call to dispatch results in a call to your reducer!
-
+> Every call to dispatch results in a call to your reducer!
 
 ### Handle Actions in a Redux Reducer
 

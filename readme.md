@@ -118,7 +118,7 @@ store.dispatch({
 
 ## React and Redux: Connecting State to React
 
-To setup Redux/React Redux install the two packages:
+To setup React in Redux you need to install the two packages:
 
 ```
 npm install redux react-redux

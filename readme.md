@@ -184,8 +184,9 @@ The two functions it takes as parameters are:
 
 The purpose of the ```mapStateToProps``` function is to give the component access to the Redux state via props. 
 
-mapStateToProps is a function that takes in the Redux state and converts it to a format that is easy for your React components to work with. This means that the structure of the state that your React components
-gets is not the same structure as the Redux state.
+> mapStateToProps is a function that takes in the Redux state and converts it to a format that is easy for your React components to work with. 
+
+This means that the structure of the state that your React components gets is not the same structure as the Redux state.
 
 mapStateToProps is automatically called by Redux internals every time your state changes. It gets the new Redux state as input parameter and it returns an object that is passed into the connected componentas props.
 

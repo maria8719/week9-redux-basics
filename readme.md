@@ -90,7 +90,7 @@ Redux gives you a store, and let's you keep state in it, and get state out, and 
 import { createStore } from 'redux';
 ```
 
-Now you use it to create a store singleton instance. The createStore function takes one mandatory argument: a reducer. 
+Now you use it to create a store instance. The <a href="https://redux.js.org/api/createstore">createStore function</a> takes one mandatory argument: a reducer. 
 
 ```JS
 const store = createStore(reducer);

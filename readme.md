@@ -190,10 +190,6 @@ This means that the structure of the state that your React components gets is no
 
 mapStateToProps is automatically called by Redux internals every time your state changes. It gets the new Redux state as input parameter and it returns an object that is passed into the connected componentas props.
 
-The reason for this is that your components should only be concerned about displaying stuff, not about how to finda data in the state.
-
-> So remember, your React components only gets Redux state from props.
-
 #### mapDispatchToProps
 
 The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. The component can access the actions via props. 

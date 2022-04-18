@@ -144,7 +144,7 @@ const App = () => (
 
 Now any components (and their children) defined inside the ```<Provider></Provider>``` can access the Redux store.
 
-But, not automatically.
+<strong>But, not automatically.</strong>
 
 ### Using Connect()
 

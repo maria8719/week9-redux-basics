@@ -161,7 +161,7 @@ As the first argument passed in to connect, <a href="https://react-redux.js.org/
   - It is called every time the store state changes.
   - It receives the entire store state, and should return an object of data this component needs.
 
-It should take a first argument called state, optionally a second argument called ownProps, and return a plain object containing the data that the connected component needs.
+It should take a first argument called ```state```, optionally a second argument called ```ownProps```, and return a plain object containing the data that the connected component needs.
 
 ```JS
 const mapStateToProps = (state, ownProps) => ({

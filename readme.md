@@ -126,7 +126,7 @@ npm install redux react-redux
 
 It's ```react-redux``` that lets you connect pieces of the state to React components, because ```redux``` knows nothing about React at all.
 
-The redux library can be used outside of a React app with other front-end libraries like Vue, Angular, and even backend Node/Express apps.
+The <a href="https://www.npmjs.com/package/redux">redux library</a> can be used outside of a React app with other front-end libraries like Vue, Angular, and even backend Node/Express apps.
 
 The ```react-redux``` library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>.
 

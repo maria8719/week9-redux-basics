@@ -141,7 +141,7 @@ import { Provider } from 'react-redux';
 
 const App = () => (
     <Provider store={store}>
-        // ...compoments
+        <TodoList />
     </Prover>
 ```
 
@@ -159,7 +159,7 @@ import { connect } from 'react-redux';
 
 > The connect function describes how to map the contents of the store to the props that are sent to the React component. 
 
-As the first argument passed in to connect, mapStateToProps is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
+As the first argument passed in to connect, <a href="https://react-redux.js.org/api/connect#mapstatetoprops-state-ownprops--object">mapStateToProps</a> is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
 
   - It is called every time the store state changes.
   - It receives the entire store state, and should return an object of data this component needs.
@@ -167,17 +167,15 @@ As the first argument passed in to connect, mapStateToProps is used for selectin
 It should take a first argument called state, optionally a second argument called ownProps, and return a plain object containing the data that the connected component needs.
 
 ```JS
-function mapStateToProps(state) {
-   return {
-      count: state.count
-   };
-}
+const mapStateToProps = (state, ownProps) => ({
+  todo: state.todos[ownProps.id],
+})
 ```
 
-Before Redux we export the component itself but now we’re wrapping it with this connect function call, so we’re exporting the connected Counter component. As far as the rest of your app is concerned, this looks like a regular component.
+The return of connect() is a wrapper function that takes your component and returns a wrapper component with the additional props it injects.
 
 ```JS
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps)(TodoList);
 ```
 
 The connect is a higher-order function that takes two functions as parameters and returns a function that wraps the compoment.
@@ -185,6 +183,28 @@ The connect is a higher-order function that takes two functions as parameters an
 The two functions it takes as paramters are:
   - mapStateToProps
   - mapDispatchToProps
+
+
+#### mapStateToProps
+
+The purpose of the ```mapStateToProps``` function is to give the component access to the Redux state via props. 
+
+mapStateToProps is a function that takes in the Redux state and converts it to a format that is easy for your React components to work with. This means that the structure of the state that your React components
+gets is not the same structure as the Redux state.
+
+mapStateToProps is automatically called by Redux internals every time your state changes. It gets the new Redux state as input parameter and it returns an object that is passed into the connected componentas props.
+
+The reason for this is that your components should only be concerned about displaying stuff, not about how to finda data in the state.
+
+> So remember, your React components only gets Redux state from props.
+
+#### mapDispatchToProps
+
+The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. The component can access the actions via props. 
+
+It’s a function that gets dispatch as input parameter. It returns an object where the keys are mapped as props to the wrapping component.
+
+
 
 #### Currying and closure
 

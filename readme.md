@@ -154,7 +154,7 @@ To allow a compoment to get the state out of Redux store, you can use the <a hre
 import { connect } from 'react-redux';
 ```
 
-> The connect function describes how to map the contents of the store to the props that are sent to the React component. 
+> The connect function describes how to map the contents of the store to the props sent to the React component. 
 
 As the first argument passed in to connect, <a href="https://react-redux.js.org/api/connect#mapstatetoprops-state-ownprops--object">mapStateToProps</a> is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
 

@@ -130,7 +130,7 @@ The <a href="https://www.npmjs.com/package/redux">redux library</a> can be used 
 
 The <a href="https://www.npmjs.com/package/react-redux">react-redux</a> library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>.
 
-By wrapping the entire ```<App/>``` with the Provider component, every component in the app tree will be
+By wrapping the entire ```<App/>``` with the Provider component, every component in the App tree will be
 able to access the Redux store if it wants to.
 
 ```JS

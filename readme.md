@@ -128,10 +128,11 @@ It's ```react-redux``` that lets you connect pieces of the state to React compon
 
 The <a href="https://www.npmjs.com/package/redux">redux library</a> can be used outside of a React app with other front-end libraries like Vue, Angular, and even backend Node/Express apps.
 
-The <a href="https://www.npmjs.com/package/react-redux">react-redux</a> library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>.
+#### Provider component
 
-By wrapping the entire ```<App/>``` with the Provider component, every component in the App tree will be
-able to access the Redux store if it wants to.
+The <a href="https://www.npmjs.com/package/react-redux">react-redux</a> library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>. The Provider allows us to declare the data that we want available throughout our component tree.
+
+By wrapping the entire ```<App/>``` with the Provider component, every component in the App tree will be able to access the Redux store if it wants to.
 
 ```JS
 import { Provider } from 'react-redux';
@@ -142,11 +143,9 @@ const App = () => (
     </Prover>
 ```
 
-Now any components (and their children) defined inside the ```<Provider></Provider>``` can access the Redux store.
+<strong>But, not automatically. 😲 </strong>
 
-<strong>But, not automatically.</strong>
-
-### Using Connect()
+### Using Connect()()
 
 To allow a compoment to get the state out of Redux store, you can use the <a href="https://react-redux.js.org/api/connect">connect</a> function. 
 
@@ -172,7 +171,7 @@ const mapStateToProps = (state, ownProps) => ({
 The return of connect() is a higher-order function that takes your component and returns a wrapper component with the additional props it injects.
 
 ```JS
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 ```
 
 The two functions it takes as parameters are:
@@ -193,8 +192,6 @@ mapStateToProps is automatically called by Redux internals every time your state
 #### mapDispatchToProps
 
 The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. The component can access the actions via props. It’s a function that gets ```dispatch``` as input parameter. It returns an object where the keys are mapped as props to the wrapping component.
-
-
 
 #### Currying and closure
 
@@ -223,10 +220,25 @@ React's new "hooks" APIs give function components the ability to use local compo
 
 React Redux includes its own <a href="https://react-redux.js.org/api/hooks#using-hooks-in-a-react-redux-app">custom hook APIs</a>, which allow your React components to subscribe to the Redux store and dispatch actions.
 
+Let's do a translation of connect()() to hooks:
+
+```JS
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+```
 
 
+const mapStateToProps = state => ({
+counter: state.counter
+});
+const mapDispatchToProps = {
+increase: () => ({
+type: "INCREASE_COUNTER"
+})
+};
 
-## Debugging
+## Middleware
+
+
 
 
 ## Redux Alternatives

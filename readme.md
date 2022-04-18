@@ -149,17 +149,15 @@ Now any components (and their children) defined inside the ```<Provider></Provid
 
 But, not automatically.
 
-We’ll need to use the ```connect``` function on our components to access the store.
-
-> The Provider uses React’s Context feature under the hood.
-
 ### Connect function
 
-To get the state out of Redux store, we need to import the connect function at the top of the compoment:
+To get the state out of Redux store, we import the connect function at the top of the compoment:
 
 ```JS
 import { connect } from 'react-redux';
 ```
+
+> The connect function describes how to map the contents of the store to the props that are sent to the React component. 
 
 As the first argument passed in to connect, mapStateToProps is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
 

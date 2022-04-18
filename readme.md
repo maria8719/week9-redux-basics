@@ -192,9 +192,7 @@ mapStateToProps is automatically called by Redux internals every time your state
 
 #### mapDispatchToProps
 
-The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. The component can access the actions via props. 
-
-It’s a function that gets dispatch as input parameter. It returns an object where the keys are mapped as props to the wrapping component.
+The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. The component can access the actions via props. It’s a function that gets ```dispatch``` as input parameter. It returns an object where the keys are mapped as props to the wrapping component.
 
 
 

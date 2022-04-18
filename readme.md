@@ -128,7 +128,7 @@ It's ```react-redux``` that lets you connect pieces of the state to React compon
 
 The <a href="https://www.npmjs.com/package/redux">redux library</a> can be used outside of a React app with other front-end libraries like Vue, Angular, and even backend Node/Express apps.
 
-The ```react-redux``` library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>.
+The <a href="https://www.npmjs.com/package/react-redux">react-redux</a> library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>.
 
 By wrapping the entire app with the Provider component, every component in the app tree will be
 able to access the Redux store if it wants to.

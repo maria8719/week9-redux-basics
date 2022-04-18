@@ -84,7 +84,7 @@ function reducer(state = initialState, action) {
 
 Redux gives you a store, and let's you keep state in it, and get state out, and respond when the state changes, and that's all it does. 
 
-Be careful in thinking that the ```store``` and ```state``` are the same.  Technically, the state is the data, and the store is where it’s kept.
+> Be careful in thinking that the ```store``` and ```state``` are the same.  Technically, the state is the data, and the store is where it’s kept.
 
 ```JS
 import { createStore } from 'redux';

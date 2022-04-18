@@ -131,7 +131,7 @@ It's ```react-redux``` that lets you connect pieces of the state to React compon
 
 The redux library can be used outside of a React app with other front-end libraries like Vue, Angular, and even backend Node/Express apps.
 
-The ```react-redux``` library comes with 2 things: a component called <a href="https://react-redux.js.org/api/provider">Provider</a>, and a function called <a href="https://react-redux.js.org/api/connect">connect</a>.
+The ```react-redux``` library comes a component called <a href="https://react-redux.js.org/api/provider">Provider</a>.
 
 By wrapping the entire app with the Provider component, every component in the app tree will be
 able to access the Redux store if it wants to.
@@ -149,9 +149,9 @@ Now any components (and their children) defined inside the ```<Provider></Provid
 
 But, not automatically.
 
-### Connect function
+### Using Connect()
 
-To get the state out of Redux store, we import the connect function at the top of the compoment:
+To allow a compoment to get the state out of Redux store, you can use the <a href="https://react-redux.js.org/api/connect">connect</a> function. 
 
 ```JS
 import { connect } from 'react-redux';
@@ -186,7 +186,7 @@ The two functions it takes as paramters are:
   - mapStateToProps
   - mapDispatchToProps
 
-### Currying and closure
+#### Currying and closure
 
 The reason you have the two parenthesis ()() is because of ```currying```. Currying is the process in functional programming that transforms a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.
 
@@ -206,6 +206,15 @@ console.log(multiply(1)(2));
 const a = multiply(1) // => function(b) return 1 * b
 const product = a(2);
 ```
+
+### Using Hooks
+
+React's new "hooks" APIs give function components the ability to use local component state, execute side effects, and more. 
+
+React Redux includes its own <a href="https://react-redux.js.org/api/hooks#using-hooks-in-a-react-redux-app">custom hook APIs</a>, which allow your React components to subscribe to the Redux store and dispatch actions.
+
+
+
 
 ## Debugging
 

@@ -58,9 +58,6 @@ A reducer function takes the current state, and a action and returns the new sta
 
 The reducer function has another job too. It should return the initial state the first time it’s called. This is sort of like “bootstrapping” your app. It’s gotta start somewhere, right?
 
-The idiomatic way to do that is to define an initialState variable and use the ES6 default argument
-syntax to assign it to state.
-
 ```JS
 const initialState = {
    count: 0

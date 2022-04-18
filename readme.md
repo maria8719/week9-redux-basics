@@ -169,15 +169,13 @@ const mapStateToProps = (state, ownProps) => ({
 })
 ```
 
-The return of connect() is a wrapper function that takes your component and returns a wrapper component with the additional props it injects.
+The return of connect() is a higher-order function that takes your component and returns a wrapper component with the additional props it injects.
 
 ```JS
 export default connect(mapStateToProps)(TodoList);
 ```
 
-The connect is a higher-order function that takes two functions as parameters and returns a function that wraps the compoment.
-
-The two functions it takes as paramters are:
+The two functions it takes as parameters are:
   - mapStateToProps
   - mapDispatchToProps
 

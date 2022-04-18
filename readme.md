@@ -116,7 +116,7 @@ store.dispatch({
 
 > Every call to dispatch results in a call to your reducer!
 
-## React and Redux: Connect State to React
+## React and Redux: Connecting State to React
 
 To setup Redux/React Redux install the two packages:
 

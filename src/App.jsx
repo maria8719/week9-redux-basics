@@ -1,18 +1,12 @@
-import { useState } from "react";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import  TodoList  from "./components/TodoList";
-import  AddTodoForm  from "./components/AddTodoForm";
-import reducer from "./redux/reducers";
+import  TodoList  from "./containers/TodoList";
+import  AddTodoForm  from "./components/TodoForm";
+import rootReducer from "./redux/reducers";
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = (text) => {
-    setTodos([...todos, { id: todos.length, text, completed: false }]);
-  };
 
   return (
     <>

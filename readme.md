@@ -4,7 +4,7 @@ State management in web applications has become a popular topic. Since single pa
 
 They have to keep the state consistent in the frontend application without making any more requests to the backend application. They have to give the user an effortless and pleasant experience when using the application.
 
-In React, data flows unidirectionally. This means that we can only pass data from a parent to a child component. This can become a hassle and pretty complex when we start dealing with very large scaled applications.
+In React, data flows unidirectionally. This means that we can only pass data from a parent to a child component. This can become a hassle and pretty complex (aka <a href="https://kentcdodds.com/blog/prop-drilling">prop-drilling</a>) when we start dealing with very large scaled applications.
 
 ![Without Redux](images/without_redux.png)
 
@@ -241,3 +241,5 @@ type: "INCREASE_COUNTER"
 Under the hood, React-Redux uses React’s built-in Context API to pass data around. If you want to,
 you can cut out the middleman and use Context directly. You’ll miss out on the nice features of Redux, but if your app is simple and you want an easy way to pass data around, Context might be perfect.
 
+ - For large, enterprise-level React applications using the Context API alone can make a complex setup to maintain.
+ - Also, <a href="https://redux.js.org/faq/performance#performance">performance</a> may be an issue with the Context API vs Redux, as Redux has performance optimizations in-place that the Context API does not. 

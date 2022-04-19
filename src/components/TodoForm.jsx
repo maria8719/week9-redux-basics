@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function AddTodoForm ({ addTodo }) {
+export default function TodoForm ({ addTodo }) {
 
     // Create a ref to hold the input element
     // Eliminates the need for local state  

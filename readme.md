@@ -153,12 +153,9 @@ To allow a compoment to get the state out of Redux store, you can use the <a hre
 import { connect } from 'react-redux';
 ```
 
-> The connect function describes how to map the contents of the store to the props sent to the React component. 
+> The connect function returns a brand new component and passes that new component any data that it needs from the store.
 
 As the first argument passed in to connect, <a href="https://react-redux.js.org/api/connect#mapstatetoprops-state-ownprops--object">mapStateToProps</a> is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just mapState for short.
-
-  - It is called every time the store state changes.
-  - It receives the entire store state, and should return an object of data this component needs.
 
 It should take a first argument called ```state```, optionally a second argument called ```ownProps```, and return a plain object containing the data that the connected component needs.
 
@@ -174,9 +171,7 @@ The return of connect() is a higher-order function that takes your component and
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 ```
 
-The two functions it takes as parameters are:
-  - mapStateToProps
-  - mapDispatchToProps
+> So connects works by first invoking it which returns a brand new function, which then you invoke that new function passing it the compoment that you want render.
 
 
 #### mapStateToProps

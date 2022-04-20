@@ -1,6 +1,8 @@
+import {connect} from 'react-redux';
+import * as actions from '../actions/actions';
 import { useRef } from "react";
 
-export default function TodoForm ({ addTodo }) {
+const TodoForm = (props) =>{
 
     // Create a ref to hold the input element
     // Eliminates the need for local state  
@@ -14,7 +16,7 @@ export default function TodoForm ({ addTodo }) {
         const todo = todoInput.current.value;
         console.log(todo)
         if (!todo) return;
-        addTodo(todo);
+        props.submitNewTodo(todo);
         todoInput.current.value = ''
     };
 
@@ -32,3 +34,10 @@ export default function TodoForm ({ addTodo }) {
     );
 }
 
+const mapDispatchToProps = dispatch => (
+   {
+        submitNewTodo: (todo) => dispatch(actions.addTodo(todo))
+    }
+);
+
+export default connect(null, mapDispatchToProps)(TodoForm);

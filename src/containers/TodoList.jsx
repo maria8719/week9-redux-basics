@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
 import Todo from '../components/Todo';
 
-function TodoList (props) {
+const TodoList = (props) => {
 
     return (    
         <ul>
             {
-                todos.map((todo, index) => {
+                props.todos.map((todo, index) => {
                     return (
                         <Todo 
                             key={index}
@@ -21,9 +21,11 @@ function TodoList (props) {
 };
 
 const mapStateToProps = (state) => {
-    return {
+    return (
+      {
         todos: state.todos
-    }
+      }
+    )
 }
 
 export default connect(mapStateToProps)(TodoList);

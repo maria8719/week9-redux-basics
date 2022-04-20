@@ -1,9 +1,9 @@
-import {Provider} from "react-redux";
 import  TodoList  from "./containers/TodoList";
 import  AddTodoForm  from "./containers/TodoForm";
+import {Provider} from "react-redux";
 import store from "./redux/store";
 
-export default function App() {
+const App = () => {
 
   return (
     <>
@@ -14,3 +14,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;

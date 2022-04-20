@@ -1,9 +1,10 @@
 import * as types from '../constants/actionTypes';
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
     todos: [
         {
-            id: todos.length,
+            id: uuidv4(),
             text: 'Use Redux',
             completed: false
         }
@@ -12,12 +13,12 @@ const initialState = {
 
  const todosReducer = (state = initialState, action) =>{
 
-    const todoList = [];
+    let todoList = [];
 
     switch(action.type) {
         case types.ADD_TODO: {
             todoList = [...state.todos, {
-                id: state.todos.length,
+                id:  uuidv4(),
                 text: action.payload,
                 completed: false
             }];
@@ -28,10 +29,12 @@ const initialState = {
         }   
         case types.TOGGLE_TODO: {
           // ...
+        
         }
         case types.DELETE_TODO: {
          
           // ...
+         
         }    
         default: {
             return state;

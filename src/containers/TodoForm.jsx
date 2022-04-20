@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import * as actions from '../actions/actions';
+import * as actions from '../redux/actions/todoActions';
 import { useRef } from "react";
 
 const TodoForm = (props) =>{
@@ -14,7 +14,6 @@ const TodoForm = (props) =>{
     const handleSubmit = (e) => {
         e.preventDefault();
         const todo = todoInput.current.value;
-        console.log(todo)
         if (!todo) return;
         props.submitNewTodo(todo);
         todoInput.current.value = ''

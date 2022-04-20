@@ -6,7 +6,7 @@ const TodoList = (props) => {
     return (    
         <ul>
             {
-                props.todos.map((todo, index) => {
+                props.todoList.map((todo, index) => {
                     return (
                         <Todo 
                             key={index}
@@ -20,12 +20,13 @@ const TodoList = (props) => {
     );
 };
 
+// mapStateToProps is a function that takes the state as an argument
+// and returns an object that will become props for the component
 const mapStateToProps = (state) => {
-    return (
-      {
-        todos: state.todos
-      }
-    )
+    const {todos} = state.todos;
+    return { 
+            todoList: todos
+        }
 }
 
 export default connect(mapStateToProps)(TodoList);

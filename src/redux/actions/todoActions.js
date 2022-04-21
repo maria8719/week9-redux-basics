@@ -1,22 +1,3 @@
-/**
- * ************************************
- *
- * @module  actions.js
- * @author
- * @date
- * @description Action Creators
- *
- * ************************************
- */
-
-
-/*
-const addTodo = (text) => {
-    setTodos([...todos, { id: todos.length, text, completed: false }]);
-  };
-*/
-
-// import actionType constants
 import * as types from '../constants/actionTypes'
 
 export const addTodo = (text) => ({

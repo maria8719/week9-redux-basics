@@ -1,9 +1,27 @@
+import {connect} from 'react-redux';
+import * as actions from '../redux/actions/todoActions';
 
+const Todo = (props) =>{
 
-export default function Todo ({id, text}) {
+    const handleClick = (id) => {
+        if (!id) return;
+        props.submitDeleteTodo(id);
+    };
+
     return (
         <>
-            <li> {text} </li>
+            <li> 
+                <span>{props.text}</span> 
+                <button onClick={() => handleClick(props.id)}>X</button>
+            </li>
         </>
     );
 };
+
+const mapDispatchToProps = dispatch => (
+    {
+         submitDeleteTodo: (todo) => dispatch(actions.deleteTodo(todo))
+    }
+ );
+ 
+ export default connect(null, mapDispatchToProps)(Todo);

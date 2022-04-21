@@ -3,19 +3,20 @@ import Todo from '../components/Todo';
 
 const TodoList = (props) => {
 
+    const todos = [];
+
+    props.todoList.forEach(todo => {
+        todos.push(
+            <Todo
+                key={todo.id}
+                id={todo.id}
+                text={todo.text}
+            />)
+   });
+
     return (    
         <ul>
-            {
-                props.todoList.map((todo, index) => {
-                    return (
-                        <Todo 
-                            key={index}
-                            id={todo.id}
-                            text={todo.text}
-                        />
-                    );
-                }
-            )}
+              {todos}
         </ul>
     );
 };

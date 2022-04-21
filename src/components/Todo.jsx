@@ -25,8 +25,8 @@ const Todo = (props) =>{
 
 const mapDispatchToProps = dispatch => (
     {
-         submitDeleteTodo: (todo) => dispatch(actions.deleteTodo(todo)),
-         submitToggleTodo: (todo) => dispatch(actions.toggleTodo(todo))
+         submitDeleteTodo: (todo) => dispatch(actions.deleteTodo(id)),
+         submitToggleTodo: (todo) => dispatch(actions.toggleTodo(id))
     }
  );
  

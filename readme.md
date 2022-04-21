@@ -165,15 +165,6 @@ const mapStateToProps = (state, ownProps) => ({
 })
 ```
 
-The return of connect() is a higher-order function that takes your component and returns a wrapper component with the additional props it injects.
-
-```JS
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
-```
-
-> So connects works by first invoking it which returns a brand new function, which then you invoke that new function passing it the compoment that you want render.
-
-
 #### mapStateToProps
 
 The purpose of the ```mapStateToProps``` function is to give the component access to the Redux state via props. 
@@ -186,11 +177,37 @@ mapStateToProps is automatically called by Redux internals every time your state
 
 #### mapDispatchToProps
 
-The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. The component can access the actions via props. It’s a function that gets ```dispatch``` as input parameter. It returns an object where the keys are mapped as props to the wrapping component.
+The purpose of the ```mapDispatchToProps``` function is to give the component access to which actions your compoment needs to dispatch via props.
+
+```JS
+const mapDispatchToProps = dispatch => (
+   {
+        submitNewTodo: (todo) => dispatch(actions.addTodo(todo))
+   }
+);
+```
+
+The <a href="https://react-redux.js.org/using-react-redux/connect-mapdispatch#providing-a-mapdispatchtoprops-parameter">mapDispatchToProps</a> function maps actions to the component. 
+
+It’s a function that gets ```dispatch``` as input parameter. It returns an object where the keys are mapped as props to the wrapping component.
+
+> Not every component will need both parameters defined for connect()(). If you only need state or actions for a particular compoment, you can ignore passing anything to the 2nd paramter or pass null for the 1st parameter.
+
+Only needs state from Redux store via props:
+```JS
+export default connect(mapStateToProps)(TodoList);
+```
+
+Only needs actions to dispatch from reducer(s) via props:
+```JS
+export default connect(null, mapDispatchToProps)(Todo);
+```
+
+> The return of connect() is a higher-order function that takes your component and returns a wrapper component with the additional props it injects. So when connect is first invoked (passing mapStateToProps and/or mapDispatchToProps), it returns a brand new function, then you invoke that new function passing it the component that you want render with that data and/or actions attached to it (2nd argument).
 
 #### Currying and closure
 
-The reason you have the two parenthesis ()() is because of ```currying```. Currying is the process in functional programming that transforms a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.
+The reason connect has the two parenthesis ()() is because of ```currying``` and ```closure```. Currying the process in functional programming that transforms a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.
 
 ```JS
 function multiply(a, b) {
@@ -209,37 +226,6 @@ const a = multiply(1) // => function(b) return 1 * b
 const product = a(2);
 ```
 
-### Using Hooks
+## Additional Resources:
 
-React's new "hooks" APIs give function components the ability to use local component state, execute side effects, and more. 
-
-React Redux includes its own <a href="https://react-redux.js.org/api/hooks#using-hooks-in-a-react-redux-app">custom hook APIs</a>, which allow your React components to subscribe to the Redux store and dispatch actions.
-
-Let's do a translation of connect()() to hooks:
-
-```JS
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
-```
-
-
-const mapStateToProps = state => ({
-counter: state.counter
-});
-const mapDispatchToProps = {
-increase: () => ({
-type: "INCREASE_COUNTER"
-})
-};
-
-## Middleware
-
-
-
-
-## Redux Alternatives
-
-Under the hood, React-Redux uses React’s built-in Context API to pass data around. If you want to,
-you can cut out the middleman and use Context directly. You’ll miss out on the nice features of Redux, but if your app is simple and you want an easy way to pass data around, Context might be perfect.
-
- - For large, enterprise-level React applications using the Context API alone can make a complex setup to maintain.
- - Also, <a href="https://redux.js.org/faq/performance#performance">performance</a> may be an issue with the Context API vs Redux, as Redux has performance optimizations in-place that the Context API does not. 
+- (Redux for Beginners)[https://www.youtube.com/watch?v=CVpUuw9XSjY]

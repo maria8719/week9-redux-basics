@@ -6,7 +6,7 @@ const initialState = {
         {
             id: uuidv4(),
             text: 'Use Redux',
-            completed: false
+            completed: true
         }
     ],
 }

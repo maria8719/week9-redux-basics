@@ -7,6 +7,7 @@ const App = () => {
 
   return (
     <>
+      <h1>Todo App</h1>
       <Provider store={store}>
           <AddTodoForm />
           <TodoList />

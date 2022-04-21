@@ -10,7 +10,12 @@ const Todo = (props) =>{
 
     return (
         <>
-            <li> 
+            <li>  
+                <input 
+                  type="checkbox"
+                  checked = { props.completed }
+                  onChange = { () => props.submitToggleTodo(props.id) }
+               />
                 <span>{props.text}</span> 
                 <button onClick={() => handleClick(props.id)}>X</button>
             </li>
@@ -20,7 +25,8 @@ const Todo = (props) =>{
 
 const mapDispatchToProps = dispatch => (
     {
-         submitDeleteTodo: (todo) => dispatch(actions.deleteTodo(todo))
+         submitDeleteTodo: (todo) => dispatch(actions.deleteTodo(todo)),
+         submitToggleTodo: (todo) => dispatch(actions.toggleTodo(todo))
     }
  );
  

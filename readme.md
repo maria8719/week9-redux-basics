@@ -228,4 +228,4 @@ const product = a(2);
 
 ## Additional Resources:
 
-- (Redux for Beginners)[https://www.youtube.com/watch?v=CVpUuw9XSjY]
+- [Redux for Beginners](https://www.youtube.com/watch?v=CVpUuw9XSjY)

@@ -29,13 +29,28 @@ const initialState = {
         }   
         case types.TOGGLE_TODO: {
           // ...
-        
-        }
+          const items = state.todos.map(item => {
+            if (item.id === action.payload) {
+              const newItem = { ...item };
+              newItem.completed = !newItem.completed;
+              return newItem;
+            }
+    
+            return item;
+          });
+    
+          return { ...state, todos: items };          
+                 
+          
+    }
         case types.DELETE_TODO: {
          
           // ...
+         let updatedTodos = state.todos.filter(
+            (todo) => todo.id !== action.payload);
+          return { ...state, todos: updatedTodos };
          
-        }    
+        }   
         default: {
             return state;
         }
